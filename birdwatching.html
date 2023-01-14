@@ -8,6 +8,7 @@ body {
 	font-family: Ubuntu;	
 }
 img {
+	position: absolute;
 	text-align: center;
 	max-width: 100%;
 	height: auto;
@@ -78,8 +79,24 @@ nav ul li a {
 		<center><p>Venture into the wild!</p></center>
 	</header>
 	<picture>
-		<img src='forest.JPG'>
+		<img id='bird' src='bird1.png'>
+		<img src='forest.jpeg'>
 		</picture>
 	</div>
+	<script>
+		const bird = document.getElementById('bird')
+		let left = 0;
+		let top_ = 200;
+		let upDown = 0;
+		const flapSpeed = 6;
+		const speed = 4;
+		setInterval(() => {
+		  upDown = upDown + Math.random() * flapSpeed - flapSpeed / 2;
+		  left += speed;
+		  top_ += upDown;
+		  bird.style.left = left;
+		  bird.style.top = top_;
+		}
+	  </script>
 </body>
 </html>
